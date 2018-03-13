@@ -1,0 +1,23 @@
+﻿<Controls:MetroWindow x:Class="SIGEEA_App.Ventanas_Modales.Asociados.wnwFacturasPendientes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:SIGEEA_App.Ventanas_Modales.Asociados"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Facturas Pendientes" Height="321.429" Width="580.826" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Border BorderBrush="#83919F" BorderThickness="2">
+        <Grid>
+            <DataGrid Margin="61,27,87,234">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Factura N°" Width="100" CanUserResize="False" FontSize="16" FontWeight="Bold" TextBlock.TextAlignment="Center"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Fecha de entrega" Width="auto" CanUserResize="False" FontSize="16" FontWeight="Bold" TextBlock.TextAlignment="Center"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="30,59,29,57" Width="450">
+                <StackPanel Name="stpContenedor" Background="#FFBABDBF"></StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</Controls:MetroWindow>

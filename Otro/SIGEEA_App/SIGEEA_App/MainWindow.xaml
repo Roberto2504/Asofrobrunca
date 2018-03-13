@@ -1,0 +1,93 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SIGEEA_App"
+        xmlns:Custom_Controls="clr-namespace:SIGEEA_App.Custom_Controls" x:Class="SIGEEA_App.MainWindow"
+        mc:Ignorable="d"
+        Title="Pantalla principal" Width="1353.901" Height="758.865" WindowStartupLocation="CenterScreen" WindowStyle="None" Icon="Icono FUNDER.ico" ResizeMode="CanMinimize" >
+    <Grid  Name="grdPrincipal">
+
+        <Rectangle HorizontalAlignment="Left" Height="117"  VerticalAlignment="Top" Width="357" RadiusY="9.667" RadiusX="9.667" Margin="979,17,0,0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFDFDFD" Offset="0"/>
+                    <GradientStop Color="#FFD4F5DA" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+
+
+
+        <Image x:Name="image" HorizontalAlignment="Left" Height="121" VerticalAlignment="Top" Width="196" Source="Imagenes/Costa_Fresh.png" Margin="10,0,0,0"/>
+        <Button x:Name="btnSalir" Margin="10,684,1274,10" Style="{DynamicResource MetroCircleButtonStyle}" Cursor="Hand" Click="btnFondo_Click">
+            <Rectangle Width="40" Height="42" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                <Rectangle.OpacityMask>
+                    <VisualBrush Stretch="Fill"
+    					Visual="{DynamicResource appbar_draw_brush}" />
+                </Rectangle.OpacityMask>
+            </Rectangle>
+        </Button>
+
+        <Button x:Name="btnAyuda" Click="btnSalir_Click" Margin="1261,684,18,9" Style="{DynamicResource MetroCircleButtonStyle}" Cursor="Hand">
+            <Rectangle Width="37" Height="31"   Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                <Rectangle.OpacityMask>
+                    <VisualBrush Stretch="Fill"
+    					Visual="{DynamicResource appbar_close}" />
+                </Rectangle.OpacityMask>
+            </Rectangle>
+        </Button>
+
+        <WrapPanel HorizontalAlignment="Left" x:Name="wrpPrincipal" Height="80" Margin="48,230,0,0" VerticalAlignment="Top" Width="1278"/>
+        <Label x:Name="label" Content="Bienvenido, " HorizontalAlignment="Left" Margin="985,17,0,0" VerticalAlignment="Top"  FontSize="16" FontWeight="Bold" FontStyle="Italic" Background="{x:Null}" Foreground="Black"/>
+        <Label x:Name="lbUsuarioActual" Content="Bienvenido!! " HorizontalAlignment="Left" Margin="1077,18,0,0" VerticalAlignment="Top"  FontSize="16" FontWeight="Bold" FontStyle="Italic" Foreground="Black" Width="257" Background="{x:Null}"/>
+        <Label x:Name="lbCerrarSesión" Content="Cerrar sesión " HorizontalAlignment="Left" Margin="1205,37,0,0" VerticalAlignment="Top"  FontSize="14" FontStyle="Italic" Foreground="Black" Width="109" Background="{x:Null}" MouseUp="lbCerrarSesión_MouseUp"/>
+        <Button x:Name="btnRefrescar"  Style="{DynamicResource MetroCircleButtonStyle}" Cursor="Hand" Click="btnRefrescar_Click" Margin="1236,91,88,641" >
+            <Rectangle Width="9" Height="10" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                <Rectangle.OpacityMask>
+                    <VisualBrush Stretch="Fill"
+    					Visual="{DynamicResource appbar_refresh}" />
+                </Rectangle.OpacityMask>
+            </Rectangle>
+        </Button>
+        <Label x:Name="label_Copy" Content="Dolar" HorizontalAlignment="Left" Margin="1001,94,0,0" VerticalAlignment="Top"  FontSize="16" FontWeight="Bold" FontStyle="Italic" Background="{x:Null}" Foreground="Black"/>
+        <Label x:Name="label_Copy2" Content="Compra" HorizontalAlignment="Left" Margin="1156,66,0,0" VerticalAlignment="Top"  FontSize="16" FontStyle="Italic" Background="{x:Null}" Foreground="Black"/>
+        <Rectangle Fill="#FF007805" HorizontalAlignment="Left" Height="2" Margin="1003,94,0,0" VerticalAlignment="Top" Width="233"/>
+        <Rectangle Fill="#FF007805" HorizontalAlignment="Left" Height="2" Margin="1003,123,0,0" VerticalAlignment="Top" Width="233"/>
+        <Rectangle Fill="#FF0B6C0F" HorizontalAlignment="Left" Height="2" Margin="1123,101,0,0" VerticalAlignment="Top" Width="43" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.971"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FF0B6C0F" HorizontalAlignment="Left" Height="2" Margin="1039,101,0,0" VerticalAlignment="Top" Width="43" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.971"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBlock x:Name="txtVenta"  HorizontalAlignment="Left" Margin="1064,100,0,0" VerticalAlignment="Top"  FontSize="16" FontStyle="Italic" Background="{x:Null}" Foreground="Black" Width="77" TextAlignment="Right"/>
+        <TextBlock x:Name="txtCompra"  HorizontalAlignment="Left" Margin="1149,100,0,0" VerticalAlignment="Top"  FontSize="16" FontStyle="Italic" Background="{x:Null}" Foreground="Black" Width="82" TextAlignment="Right" Height="21" />
+        <Label x:Name="label_Copy1" Content="Venta" HorizontalAlignment="Left" Margin="1077,66,0,0" VerticalAlignment="Top"  FontSize="16" FontStyle="Italic" Background="{x:Null}" Foreground="Black"/>
+        <TextBlock x:Name="label1" HorizontalAlignment="Left" Margin="422,76,0,0" VerticalAlignment="Top" TextAlignment="Center" Height="21" Width="314" FontFamily="Yu Gothic UI Semibold" Foreground="White"><Run Text="P"/><Run Text="PUEBLO NUEVO DE CAJÓN, PÉREZ ZELEDÓN, SAN JOSÉ"/></TextBlock>
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="62" Margin="344,18,0,0" VerticalAlignment="Top" Width="470" Stretch="Fill" Source="Imagenes/logo.png">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="Imagenes/logo.png"/>
+            </Image.OpacityMask>
+        </Image>
+        <TextBlock x:Name="label1_Copy" HorizontalAlignment="Left" Margin="6,121,0,0" VerticalAlignment="Top" TextAlignment="Left" Height="80" Width="272" FontSize="20" FontFamily="Yu Gothic UI Semibold" Foreground="White"><Run Text="Ced. Jurídica: 3002411544 "/><LineBreak/><Run Text="Teléfono: 22019090 &#xA;"/><Run Text="Correo "/><Run Text=": info@costafresh.co.cr"/><LineBreak/><Run/></TextBlock>
+
+
+
+    </Grid>
+</Window>

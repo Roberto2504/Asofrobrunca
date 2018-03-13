@@ -1,0 +1,1027 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6973FC8E-EA29-4AC5-BBCE-97882C43AF12}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIGEEA_App</RootNamespace>
+    <AssemblyName>SIGEEA_App</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icono FUNDER.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SIGEEA_App.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MahApps.Metro, Version=1.2.4.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.2.4.0\lib\net45\MahApps.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.2.4.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Custom_Controls\ccAbonoCliente.cs" />
+    <Compile Include="Custom_Controls\ccBotonBasico.cs" />
+    <Compile Include="Custom_Controls\ccCliente.cs" />
+    <Compile Include="Custom_Controls\ccCmbBasico.cs" />
+    <Compile Include="Custom_Controls\ccCompraInsumo.cs" />
+    <Compile Include="Custom_Controls\ccConsultar.cs" />
+    <Compile Include="Custom_Controls\ccEditar.cs" />
+    <Compile Include="Custom_Controls\ccEliminar.cs" />
+    <Compile Include="Custom_Controls\ccPedidoCliente.cs" />
+    <Compile Include="Custom_Controls\ccPedidoInsumo.cs" />
+    <Compile Include="Custom_Controls\ccProducto.cs" />
+    <Compile Include="DataSet\dstFacturaEntregaProducto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstFacturaEntregaProducto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dstReporteAsociadoConsolidado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstReporteAsociadoConsolidado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dstReporteAsociadoIndividual.cs">
+      <DependentUpon>dstReporteAsociadoIndividual.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dstReporteAsociadoIndividual.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstReporteAsociadoIndividual.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Facturas\helper.cs" />
+    <Compile Include="Paginas\Pag_Clientes.xaml.cs">
+      <DependentUpon>Pag_Clientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Pag_Empleados.xaml.cs">
+      <DependentUpon>Pag_Empleados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Pag_Fincas.xaml.cs">
+      <DependentUpon>Pag_Fincas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Pag_General.xaml.cs">
+      <DependentUpon>Pag_General.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Pag_Insumos.xaml.cs">
+      <DependentUpon>Pag_Insumos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Pag_Productos.xaml.cs">
+      <DependentUpon>Pag_Productos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SIGEEA_BDDataSet.cs">
+      <DependentUpon>SIGEEA_BDDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SIGEEA_BDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIGEEA_BDDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Asociados\uc_Asamblea.xaml.cs">
+      <DependentUpon>uc_Asamblea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Asociados\uc_AsociadoAsamblea.xaml.cs">
+      <DependentUpon>uc_AsociadoAsamblea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Asociados\uc_ContenedorFamiliares.xaml.cs">
+      <DependentUpon>uc_ContenedorFamiliares.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Asociados\uc_Cuota.xaml.cs">
+      <DependentUpon>uc_Cuota.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Asociados\uc_DeudorCuota.xaml.cs">
+      <DependentUpon>uc_DeudorCuota.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Asociados\uc_ItemAsociado.xaml.cs">
+      <DependentUpon>uc_ItemAsociado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Asociados\uc_ItemFamiliar.xaml.cs">
+      <DependentUpon>uc_ItemFamiliar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Clientes\uc_Cliente.xaml.cs">
+      <DependentUpon>uc_Cliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Clientes\uc_ContenedorClientes.xaml.cs">
+      <DependentUpon>uc_ContenedorClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Clientes\uc_ContenedorFacturas.xaml.cs">
+      <DependentUpon>uc_ContenedorFacturas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Clientes\uc_DetProducto.xaml.cs">
+      <DependentUpon>uc_DetProducto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Clientes\uc_Factura.xaml.cs">
+      <DependentUpon>uc_Factura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Clientes\uc_Producto.xaml.cs">
+      <DependentUpon>uc_Producto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Fincas\uc_Asociado.xaml.cs">
+      <DependentUpon>uc_Asociado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Fincas\uc_ContenedorAsociados.xaml.cs">
+      <DependentUpon>uc_ContenedorAsociados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Fincas\uc_ContenedorFincas.xaml.cs">
+      <DependentUpon>uc_ContenedorFincas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Fincas\uc_Finca.xaml.cs">
+      <DependentUpon>uc_Finca.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Fincas\uc_Lote.xaml.cs">
+      <DependentUpon>uc_Lote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\General\uc_Menu.xaml.cs">
+      <DependentUpon>uc_Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Insumos\ucCompraInsumo.xaml.cs">
+      <DependentUpon>ucCompraInsumo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Insumos\uc_ContenedorInsumos.xaml.cs">
+      <DependentUpon>uc_ContenedorInsumos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Insumos\uc_Insumo.xaml.cs">
+      <DependentUpon>uc_Insumo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Productos\uc_FacturaEntrega.xaml.cs">
+      <DependentUpon>uc_FacturaEntrega.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Productos\uc_IngresoProducto.xaml.cs">
+      <DependentUpon>uc_IngresoProducto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Productos\uc_ItemDetallePagoAsoc.xaml.cs">
+      <DependentUpon>uc_ItemDetallePagoAsoc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Productos\uc_ItemEntrega.xaml.cs">
+      <DependentUpon>uc_ItemEntrega.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\uControl_Numerico.xaml.cs">
+      <DependentUpon>uControl_Numerico.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\uc_CantidadPedidoProducto.xaml.cs">
+      <DependentUpon>uc_CantidadPedidoProducto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\uc_Contacto.xaml.cs">
+      <DependentUpon>uc_Contacto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\uc_ControlNumericoDescuento.xaml.cs">
+      <DependentUpon>uc_ControlNumericoDescuento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\uc_ControlNumericoGrande.xaml.cs">
+      <DependentUpon>uc_ControlNumericoGrande.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\uc_Moneda.xaml.cs">
+      <DependentUpon>uc_Moneda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\uc_Nacionalidades.xaml.cs">
+      <DependentUpon>uc_Nacionalidades.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\uc_PagoEmpleado.xaml.cs">
+      <DependentUpon>uc_PagoEmpleado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\uc_Puestos.xaml.cs">
+      <DependentUpon>uc_Puestos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Asociados\uc_FincaLote.xaml.cs">
+      <DependentUpon>uc_FincaLote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\uc_ratingstar.xaml.cs">
+      <DependentUpon>uc_ratingstar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Usuarios\uc_Modulos.xaml.cs">
+      <DependentUpon>uc_Modulos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Usuarios\uc_SubModulos.xaml.cs">
+      <DependentUpon>uc_SubModulos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Usuarios\uc_Usuario.xaml.cs">
+      <DependentUpon>uc_Usuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Asociados\wnwAsambleas.xaml.cs">
+      <DependentUpon>wnwAsambleas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Asociados\wnwCompletaEntrega.xaml.cs">
+      <DependentUpon>wnwCompletaEntrega.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Asociados\wnwCuotas.xaml.cs">
+      <DependentUpon>wnwCuotas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Asociados\wnwDetallesAsamblea.xaml.cs">
+      <DependentUpon>wnwDetallesAsamblea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Asociados\wnwFacturasIncompletas.xaml.cs">
+      <DependentUpon>wnwFacturasIncompletas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Asociados\wnwFacturasPendientes.xaml.cs">
+      <DependentUpon>wnwFacturasPendientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Asociados\wnwFacturasPendientesPago.xaml.cs">
+      <DependentUpon>wnwFacturasPendientesPago.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Asociados\wnwIdentificar.xaml.cs">
+      <DependentUpon>wnwIdentificar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Asociados\wnwOpcionesFacturaProducto.xaml.cs">
+      <DependentUpon>wnwOpcionesFacturaProducto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Asociados\wnwOpcionesReporteEntrega.xaml.cs">
+      <DependentUpon>wnwOpcionesReporteEntrega.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Asociados\wnwRegistrarCuota.xaml.cs">
+      <DependentUpon>wnwRegistrarCuota.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Asociados\wnwReportesAsociado.xaml.cs">
+      <DependentUpon>wnwReportesAsociado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Asociados\wnwVistaAsociados.xaml.cs">
+      <DependentUpon>wnwVistaAsociados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Asociados\wnwVistaFamiliares.xaml.cs">
+      <DependentUpon>wnwVistaFamiliares.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Clientes\wnwFacturaCliente.xaml.cs">
+      <DependentUpon>wnwFacturaCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Clientes\wnwAbonoFactura.xaml.cs">
+      <DependentUpon>wnwAbonoFactura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Clientes\wnwBuscadorCliente.xaml.cs">
+      <DependentUpon>wnwBuscadorCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Clientes\wnwCancelarFacturaCliente.xaml.cs">
+      <DependentUpon>wnwCancelarFacturaCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Clientes\wnwCantidadProductoPedido.xaml.cs">
+      <DependentUpon>wnwCantidadProductoPedido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Clientes\wnwDatosFacturaCliente.xaml.cs">
+      <DependentUpon>wnwDatosFacturaCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Clientes\wnwFacturasCliente.xaml.cs">
+      <DependentUpon>wnwFacturasCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Clientes\wnwMetodoBusquedaFactura.xaml.cs">
+      <DependentUpon>wnwMetodoBusquedaFactura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Clientes\wnwMetodoBusquedaReporte.xaml.cs">
+      <DependentUpon>wnwMetodoBusquedaReporte.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Clientes\wnwRealizarPedidoCliente.xaml.cs">
+      <DependentUpon>wnwRealizarPedidoCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Clientes\wnwReporteVentasCliente.xaml.cs">
+      <DependentUpon>wnwReporteVentasCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Contactos\wnwAgregarContacto.xaml.cs">
+      <DependentUpon>wnwAgregarContacto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Contactos\wnwContactos.xaml.cs">
+      <DependentUpon>wnwContactos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Direcciones\wnwDirecciones.xaml.cs">
+      <DependentUpon>wnwDirecciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Empleados\wnwCancelarPagoEmpleado.xaml.cs">
+      <DependentUpon>wnwCancelarPagoEmpleado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Empleados\wnwIdentificarEmpleado.xaml.cs">
+      <DependentUpon>wnwIdentificarEmpleado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Empleados\wnwPagoEmpleados.xaml.cs">
+      <DependentUpon>wnwPagoEmpleados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Empleados\wnwRegistrarHorasLaboradas.xaml.cs">
+      <DependentUpon>wnwRegistrarHorasLaboradas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Empleados\wnwReporteEmpleados.xaml.cs">
+      <DependentUpon>wnwReporteEmpleados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Fincas\wnwBuscadorAsociados.xaml.cs">
+      <DependentUpon>wnwBuscadorAsociados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Fincas\wnwBuscadorFincas.xaml.cs">
+      <DependentUpon>wnwBuscadorFincas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Fincas\wnwOpcionesBusquedaFinca.xaml.cs">
+      <DependentUpon>wnwOpcionesBusquedaFinca.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Fincas\wnwRegistrarFinca.xaml.cs">
+      <DependentUpon>wnwRegistrarFinca.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Fincas\wnwRegistrarLote.xaml.cs">
+      <DependentUpon>wnwRegistrarLote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Insumos\wmwCompraInsumo.xaml.cs">
+      <DependentUpon>wmwCompraInsumo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Insumos\wmwProveedores.xaml.cs">
+      <DependentUpon>wmwProveedores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Insumos\wnwBuscadorInsumo.xaml.cs">
+      <DependentUpon>wnwBuscadorInsumo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Insumos\wnwPedidoInsumo.xaml.cs">
+      <DependentUpon>wnwPedidoInsumo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Insumos\wnwRegistrarInsumo.xaml.cs">
+      <DependentUpon>wnwRegistrarInsumo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Nacionalidades\wnwRegistrarNacionalidad.xaml.cs">
+      <DependentUpon>wnwRegistrarNacionalidad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Personas\wnwIdentificarPersona.xaml.cs">
+      <DependentUpon>wnwIdentificarPersona.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Personas\wnwRegistrarPersona.xaml.cs">
+      <DependentUpon>wnwRegistrarPersona.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Productos\wnwEntregaProducto.xaml.cs">
+      <DependentUpon>wnwEntregaProducto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Productos\wnwFacturaEntrega.xaml.cs">
+      <DependentUpon>wnwFacturaEntrega.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Productos\wnwPreciosProducto.xaml.cs">
+      <DependentUpon>wnwPreciosProducto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Productos\wnwRegistrarProducto.xaml.cs">
+      <DependentUpon>wnwRegistrarProducto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Puestos\wnwPuestos.xaml.cs">
+      <DependentUpon>wnwPuestos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Usuarios\wnwAgregarRol.xaml.cs">
+      <DependentUpon>wnwAgregarRol.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Usuarios\wnwAgregarUsuario.xaml.cs">
+      <DependentUpon>wnwAgregarUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Usuarios\wnwMantenimientoUsuarios.xaml.cs">
+      <DependentUpon>wnwMantenimientoUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas_Modales\Usuarios\wnwRoles.xaml.cs">
+      <DependentUpon>wnwRoles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="wnwInicio.xaml.cs">
+      <DependentUpon>wnwInicio.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Paginas\Pag_Asociados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\Pag_Clientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\Pag_Empleados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\Pag_Fincas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\Pag_General.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\Pag_Insumos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\Pag_Productos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pantallas\Login_Pag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Recursos\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User_Controls\Asociados\uc_Asamblea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Asociados\uc_AsociadoAsamblea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Asociados\uc_ContenedorFamiliares.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Asociados\uc_Cuota.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Asociados\uc_DeudorCuota.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Asociados\uc_ItemAsociado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Asociados\uc_ItemFamiliar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Clientes\uc_Cliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Clientes\uc_ContenedorClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Clientes\uc_ContenedorFacturas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Clientes\uc_DetProducto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Clientes\uc_Factura.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Clientes\uc_Producto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Fincas\uc_Asociado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Fincas\uc_ContenedorAsociados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Fincas\uc_ContenedorFincas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Fincas\uc_Finca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Fincas\uc_Lote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\General\uc_Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Insumos\ucCompraInsumo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User_Controls\Insumos\uc_ContenedorInsumos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Insumos\uc_Insumo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Productos\uc_FacturaEntrega.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Productos\uc_IngresoProducto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Productos\uc_ItemDetallePagoAsoc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Productos\uc_ItemEntrega.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\uControl_Numerico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\uc_CantidadPedidoProducto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\uc_Contacto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\uc_ControlNumericoDescuento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\uc_ControlNumericoGrande.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\uc_Moneda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\uc_Nacionalidades.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\uc_PagoEmpleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\uc_Puestos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Asociados\uc_FincaLote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\uc_ratingstar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Usuarios\uc_Modulos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Usuarios\uc_SubModulos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Controls\Usuarios\uc_Usuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Asociados\wnwAsambleas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Asociados\wnwCompletaEntrega.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Asociados\wnwCuotas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Asociados\wnwDetallesAsamblea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Asociados\wnwFacturasIncompletas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Asociados\wnwFacturasPendientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Asociados\wnwFacturasPendientesPago.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Asociados\wnwIdentificar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Asociados\wnwOpcionesFacturaProducto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Asociados\wnwOpcionesReporteEntrega.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Asociados\wnwRegistrarCuota.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Asociados\wnwReportesAsociado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Asociados\wnwVistaAsociados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Asociados\wnwVistaFamiliares.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Clientes\wnwFacturaCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Clientes\wnwAbonoFactura.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Clientes\wnwBuscadorCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Clientes\wnwCancelarFacturaCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Clientes\wnwCantidadProductoPedido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Clientes\wnwDatosFacturaCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Clientes\wnwFacturasCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Clientes\wnwMetodoBusquedaFactura.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Clientes\wnwMetodoBusquedaReporte.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Clientes\wnwRealizarPedidoCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Clientes\wnwReporteVentasCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Contactos\wnwAgregarContacto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Contactos\wnwContactos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Direcciones\wnwDirecciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Empleados\wnwCancelarPagoEmpleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Empleados\wnwIdentificarEmpleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Empleados\wnwPagoEmpleados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Empleados\wnwRegistrarHorasLaboradas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Empleados\wnwReporteEmpleados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Fincas\wnwBuscadorAsociados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Fincas\wnwBuscadorFincas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Fincas\wnwOpcionesBusquedaFinca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Fincas\wnwRegistrarFinca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Fincas\wnwRegistrarLote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Insumos\wmwCompraInsumo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Insumos\wmwProveedores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Insumos\wnwBuscadorInsumo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Insumos\wnwPedidoInsumo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Insumos\wnwRegistrarInsumo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Nacionalidades\wnwRegistrarNacionalidad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Personas\wnwIdentificarPersona.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Personas\wnwRegistrarPersona.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Productos\wnwEntregaProducto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Productos\wnwFacturaEntrega.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Productos\wnwPreciosProducto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Productos\wnwRegistrarProducto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Puestos\wnwPuestos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Usuarios\wnwAgregarRol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Usuarios\wnwAgregarUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Usuarios\wnwMantenimientoUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas_Modales\Usuarios\wnwRoles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="wnwInicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Paginas\Pag_Asociados.xaml.cs">
+      <DependentUpon>Pag_Asociados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Login_Pag.xaml.cs">
+      <DependentUpon>Login_Pag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Facturas\Re_Cancelar_Factura_Cliente.rdlc" />
+    <EmbeddedResource Include="Facturas\Re_Cancelar_Pago_Empleado.rdlc" />
+    <EmbeddedResource Include="Facturas\Re_Factura_Orden_Venta.rdlc" />
+    <EmbeddedResource Include="Facturas\Re_Factura_Pendiente_Pago.rdlc" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Asociados\rptAsociadoConsolidado.rdlc" />
+    <EmbeddedResource Include="Reportes\Asociados\rptAsociadoIndividual.rdlc" />
+    <EmbeddedResource Include="Reportes\Clientes\Re_Reporte_Ventas_Cliente.rdlc" />
+    <EmbeddedResource Include="Reportes\Empleados\Re_Reporte_Empleados.rdlc" />
+    <None Include="DataSet\dstFacturaEntregaProducto.xsc">
+      <DependentUpon>dstFacturaEntregaProducto.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dstFacturaEntregaProducto.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstFacturaEntregaProducto.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dstFacturaEntregaProducto.xss">
+      <DependentUpon>dstFacturaEntregaProducto.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dstReporteAsociadoConsolidado.xsc">
+      <DependentUpon>dstReporteAsociadoConsolidado.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dstReporteAsociadoConsolidado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstReporteAsociadoConsolidado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dstReporteAsociadoConsolidado.xss">
+      <DependentUpon>dstReporteAsociadoConsolidado.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dstReporteAsociadoIndividual.xsc">
+      <DependentUpon>dstReporteAsociadoIndividual.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dstReporteAsociadoIndividual.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstReporteAsociadoIndividual.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dstReporteAsociadoIndividual.xss">
+      <DependentUpon>dstReporteAsociadoIndividual.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="SIGEEA_BDDataSet.xsc">
+      <DependentUpon>SIGEEA_BDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SIGEEA_BDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>SIGEEA_BDDataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SIGEEA_BDDataSet.xss">
+      <DependentUpon>SIGEEA_BDDataSet.xsd</DependentUpon>
+    </None>
+    <Resource Include="Recursos\Entypo.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIGEEA_BL\SIGEEA_BL.csproj">
+      <Project>{dc8e1066-0220-45db-b1ff-7641682668e7}</Project>
+      <Name>SIGEEA_BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIGEEA_BO\SIGEEA_BO.csproj">
+      <Project>{d58ab7f3-e14f-4f83-b447-23a57a7023f6}</Project>
+      <Name>SIGEEA_BO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Entypo-license.txt" />
+    <Resource Include="Recursos\WindowsIcons-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\CostaFresh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Eliminar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Correo.ico" />
+    <Resource Include="Imagenes\Fax.ico" />
+    <Resource Include="Imagenes\Otro.ico" />
+    <Resource Include="Imagenes\Tel. Movil.ico" />
+    <Resource Include="Imagenes\Tel. Residencia.ico" />
+    <Resource Include="Imagenes\Tel. Trabajo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icono FUNDER.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Costa_Fresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\fullstar.png" />
+    <Resource Include="Imagenes\halfstar.png" />
+    <Resource Include="Imagenes\nonestar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ventanas_Modales\General\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\fondo pantalla.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\LOGIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\LOGIN1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\documentacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Logo_Facturas.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

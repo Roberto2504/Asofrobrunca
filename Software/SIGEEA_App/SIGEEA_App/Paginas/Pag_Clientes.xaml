@@ -1,0 +1,21 @@
+﻿<Page x:Class="SIGEEA_App.Paginas.Pag_Clientes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SIGEEA_App.Paginas" xmlns:CustomControl="clr-namespace:SIGEEA_App.Custom_Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="400"
+      Title="Pag_Clientes" Width="1140">
+
+    <Grid Margin="20,0,10,0">
+        <Button x:Name="btnRegistrar" Content="Registrar nuevo cliente" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" Width="278" Height="84" Click="btnRegistrar_Click" FontSize="16"/>
+        <Button x:Name="btnPedido" Content="Realizar Pedido" HorizontalAlignment="Left" Margin="413,79,0,0" VerticalAlignment="Top" Width="278" Height="84" Click="btnPedido_Click" FontSize="16"/>
+        <Button x:Name="btnAbono" Content="Realizar Abono" HorizontalAlignment="Left" Margin="413,168,0,0" VerticalAlignment="Top" Width="278" Height="87" Click="btnAbono_Click" FontSize="16"/>
+        <Button x:Name="btnEditar" Content="Editar Cliente" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top" Width="278" Height="87" Click="btnEditar_Click" FontSize="16"/>
+        <Button x:Name="btnVer" Content="Ver Cliente" HorizontalAlignment="Left" Margin="413,260,0,0" VerticalAlignment="Top" Width="278" Height="84" Click="btnVer_Click" FontSize="16"/>
+        <Button x:Name="btnEliminar" Content="Eliminar o Activar Cliente" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="278" Height="84" Click="btnEliminar_Click" FontSize="16"/>
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,10 @@
+C:\Users\ASOFRUBRUNCA\Documents\software-asofrubrunca\SIGEEA_App\SIGEEA_BL\bin\Debug\SIGEEA_BL.dll
+C:\Users\ASOFRUBRUNCA\Documents\software-asofrubrunca\SIGEEA_App\SIGEEA_BL\bin\Debug\SIGEEA_BL.pdb
+C:\Users\ASOFRUBRUNCA\Documents\software-asofrubrunca\SIGEEA_App\SIGEEA_BL\bin\Debug\MahApps.Metro.dll
+C:\Users\ASOFRUBRUNCA\Documents\software-asofrubrunca\SIGEEA_App\SIGEEA_BL\bin\Debug\SIGEEA_BO.dll
+C:\Users\ASOFRUBRUNCA\Documents\software-asofrubrunca\SIGEEA_App\SIGEEA_BL\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\ASOFRUBRUNCA\Documents\software-asofrubrunca\SIGEEA_App\SIGEEA_BL\bin\Debug\SIGEEA_BO.pdb
+C:\Users\ASOFRUBRUNCA\Documents\software-asofrubrunca\SIGEEA_App\SIGEEA_BL\bin\Debug\MahApps.Metro.xml
+C:\Users\ASOFRUBRUNCA\Documents\software-asofrubrunca\SIGEEA_App\SIGEEA_BL\obj\Debug\SIGEEA_BL.csprojResolveAssemblyReference.cache
+C:\Users\ASOFRUBRUNCA\Documents\software-asofrubrunca\SIGEEA_App\SIGEEA_BL\obj\Debug\SIGEEA_BL.dll
+C:\Users\ASOFRUBRUNCA\Documents\software-asofrubrunca\SIGEEA_App\SIGEEA_BL\obj\Debug\SIGEEA_BL.pdb

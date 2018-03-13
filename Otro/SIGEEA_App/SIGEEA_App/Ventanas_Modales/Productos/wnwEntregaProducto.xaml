@@ -1,0 +1,53 @@
+﻿<Controls:MetroWindow x:Class="SIGEEA_App.Ventanas_Modales.Productos.wnwEntregaProducto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SIGEEA_App.Ventanas_Modales.Productos"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="Entrega de producto" Height="521.561" Width="1283.994" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Border BorderBrush="#83919F" BorderThickness="2">
+        <Grid>
+            <Grid Margin="0,0,0,426">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#FFA2A4C7" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Label FontWeight="Bold" FontSize="14.667" Width="auto" Name="lblNombreAsociado" Margin="0,0,850,0">Entrega de:</Label>
+                <Label FontWeight="Bold" FontSize="14.667" Width="auto" Name="lblCedulaAsociado" Margin="474,0,364,35">Cédula #:</Label>
+                <Label FontWeight="Bold" FontSize="14.667" Width="auto" Name="lblCodigoAsociado" Margin="1052,0,38,0">Código:</Label>
+            </Grid>
+            <DataGrid Margin="19,85,120,370">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Cantidad" Width="280" CanUserResize="False" FontSize="16" FontWeight="Bold" TextBlock.TextAlignment="Center"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Producto" Width="250" CanUserResize="False" FontSize="16" FontWeight="Bold" TextBlock.TextAlignment="Center"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Mercado" Width="230" CanUserResize="False" FontSize="16" FontWeight="Bold" TextBlock.TextAlignment="Center"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Finca" Width="250" CanUserResize="False" FontSize="16" FontWeight="Bold" TextBlock.TextAlignment="Center"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Lote" Width="200" CanUserResize="False" FontSize="16" FontWeight="Bold" TextBlock.TextAlignment="Center"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10,124,81,33" Background="#FF4B6181">
+                <StackPanel Margin="0,0,15,0" Name="stpContenedor" Height="Auto"/>
+            </ScrollViewer>
+            <Button x:Name="btnAgregar" Margin="1209,169,10,272" Style="{DynamicResource MetroCircleButtonStyle}" Cursor="Hand" Click="btnAgregar_Click" ToolTip="Agregar ítem">
+                <Rectangle Width="25" Height="22" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill"
+            				Visual="{DynamicResource appbar_add}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
+            <Button x:Name="btnFacturar" Margin="1209,279,10,162" Style="{DynamicResource MetroCircleButtonStyle}" Cursor="Hand" Click="btnFacturar_Click" ToolTip="Facturar">
+                <Rectangle Width="25" Height="22" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill"
+            				Visual="{DynamicResource appbar_money}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
+        </Grid>
+    </Border>
+</Controls:MetroWindow>
